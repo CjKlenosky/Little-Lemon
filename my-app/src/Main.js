@@ -1,12 +1,38 @@
-
+import { useState } from "react";
 
 function Main() {
+  // Testimonials data
+  const testimonialsData = [
+    {
+      avatar: "SJ",
+      name: "Sarah Johnson",
+      text: "Absolutely incredible! The flavors are authentic and the service is exceptional. Little Lemon has become our go-to restaurant for special occasions.",
+    },
+    {
+      avatar: "MC",
+      name: "Michael Chen",
+      text: "The best Mediterranean food in Chicago! Every dish is fresh and delicious. Little Lemon is perfect for both casual dining and celebrations.",
+    },
+    {
+      avatar: "AK",
+      name: "Alex Kim",
+      text: "Wonderful experience! The ambiance is cozy and the staff is friendly. Highly recommend Little Lemon to anyone craving fresh, authentic flavors.",
+    },
+  ];
+
+  // State for which testimonial is centered
+  const [centerIndex, setCenterIndex] = useState(1); // default center
+
+  const handleTestimonialClick = (index) => {
+    setCenterIndex(index);
+  };
+
   return (
     <main>
       {/* Specials Section */}
       <section className="specials">
         <div className="section-header">
-          <h2>This weeks specials!</h2>
+          <h2>This Week’s Specials!</h2>
           <button className="btn-secondary">Online Menu</button>
         </div>
 
@@ -64,35 +90,25 @@ function Main() {
       <section className="testimonials">
         <h2>Testimonials</h2>
         <div className="testimonials-grid">
-          <div className="testimonial">
-            <div className="testimonial-header">
-              <div className="avatar">SJ</div>
-              <div>
-                <h4>Sarah Johnson</h4>
-                <div className="stars">★★★★★</div>
+          {testimonialsData.map((testimonial, index) => {
+            const position = index === centerIndex ? "center" : "side";
+            return (
+              <div
+                key={index}
+                className={`testimonial ${position}`}
+                onClick={() => handleTestimonialClick(index)}
+              >
+                <div className="testimonial-header">
+                  <div className="avatar">{testimonial.avatar}</div>
+                  <div className="name-and-stars">
+                    <h4>{testimonial.name}</h4>
+                    <div className="stars">★★★★★</div>
+                  </div>
+                </div>
+                <p>{testimonial.text}</p>
               </div>
-            </div>
-            <p>
-              “Absolutely incredible! The flavors are authentic and the service
-              is exceptional. Little Lemon has become our go-to restaurant for
-              special occasions.”
-            </p>
-          </div>
-
-          <div className="testimonial">
-            <div className="testimonial-header">
-              <div className="avatar">MC</div>
-              <div>
-                <h4>Michael Chen</h4>
-                <div className="stars">★★★★★</div>
-              </div>
-            </div>
-            <p>
-              “The best Mediterranean food in Chicago! Every dish is fresh and
-              delicious. Little Lemon is perfect for both casual dining and
-              celebrations.”
-            </p>
-          </div>
+            );
+          })}
         </div>
       </section>
 
@@ -117,7 +133,7 @@ function Main() {
         </div>
         <div className="about-images">
           <img src="/images/mario-adrian-a.jpg" alt="Chefs preparing food" />
-          <img src="images/mario-adrian-b.jpg" alt="Little Lemon staff" />
+          <img src="/images/mario-adrian-b.jpg" alt="Little Lemon staff" />
         </div>
       </section>
     </main>

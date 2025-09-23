@@ -1,10 +1,11 @@
-import React from "react";
+
 
 function Header() {
   return (
+    <div className="hero-container">
     <header className="hero">
       <div className="hero-text">
-        <h1>Little Lemon</h1>
+        <h1>LITTLE LEMON</h1>
         <h2>Chicago</h2>
         <p>
           We are a family owned Mediterranean restaurant, focused on traditional
@@ -16,6 +17,7 @@ function Header() {
         <img src="/images\restaurant-food.jpg" alt="Delicious Mediterranean dish" />
       </div>
     </header>
+    </div>
   );
 }
 
