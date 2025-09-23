@@ -20,8 +20,7 @@ function Main() {
     },
   ];
 
-  // State for which testimonial is centered
-  const [centerIndex, setCenterIndex] = useState(1); // default center
+  const [centerIndex, setCenterIndex] = useState(1);
 
   const handleTestimonialClick = (index) => {
     setCenterIndex(index);
@@ -132,8 +131,8 @@ function Main() {
           </p>
         </div>
         <div className="about-images">
+            <img src="/images/mario-adrian-b.jpg" alt="Little Lemon staff" />
           <img src="/images/mario-adrian-a.jpg" alt="Chefs preparing food" />
-          <img src="/images/mario-adrian-b.jpg" alt="Little Lemon staff" />
         </div>
       </section>
     </main>

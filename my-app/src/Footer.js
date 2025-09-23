@@ -24,8 +24,21 @@ function Footer() {
         <p>Monday - Saturday: 5pm - 11pm</p>
         <p>Sunday: 5pm - 9:30pm</p>
       </div>
+      <div className="footer-bottom">
+        <p>© {new Date().getFullYear()} Little Lemon. All rights reserved.</p>
+        <div className="social-icons">
+          <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer">
+            <img src="\images\facebook.png" alt="Facebook" />
+          </a>
+          <a href="https://www.twitter.com" target="_blank" rel="noopener noreferrer">
+            <img src="\images\twitter.png" alt="Twitter" />
+          </a>
+          <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer">
+            <img src="\images\instagram.png" alt="Instagram" />
+          </a>
+        </div>
+      </div>
     </footer>
   );
 }
-
 export default Footer;

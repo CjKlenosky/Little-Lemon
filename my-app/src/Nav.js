@@ -5,7 +5,7 @@ function Nav() {
 
   return (
     <nav className="navbar">
-      <div className="logo">🍋 Little Lemon</div>
+      <div className="logo"><img src="\images\little-lemon-logo.svg" alt="logo" /></div>
 
       <button className="burger"
       onClick={() => setIsOpen(!isOpen)}>
